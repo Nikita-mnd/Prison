@@ -1,56 +1,23 @@
-#pragma once
-#include "main.h"
-class Student {
+
+#include "People.h"
+#include "initialization.h"
+
+class Prisoner:public People{
+private:
+    Initialization init;
+    int prisonerID = init.RandomID();
+    string name = init.RandomName();
+    string crime = init.RandomCrime();
 public:
-	string name;
-	int age;
-	double mark;
-	bool alive;
-	//Default-constructor 
-	Student() {
+    
+    Prisoner(const string& name, int id) : People(name), prisonerID(id) {}
+    string showInfo() const override {
+        string s = "Prisoner: " + name + ", ID: " + to_string(prisonerID)
+            + ", crime: " + crime;
+        return s;
+    }
 
-		cout << "Default-constructor..." << endl;
-		name = "no name";
-		age = 13;
-		mark = 4.0;
-		alive = true;
-	}
-	//constructor without arguments
-	Student(string nm, int a) {
 
-		cout << "Constructor without arguments" << endl;
-		name = nm;
-		age = a;
-		mark = 4.0;
-		alive = true;
-	}
-	//canonical-constructor
-	Student(string nm, int a, int m, bool al) {
 
-		cout << "Constructor without arguments" << endl;
-		name = nm;
-		age = a;
-		mark = m;
-		alive = al;
-	}
-	//Copy -constructor
-	Student(const Student& student) {
-
-		cout << "Copy -constructor" << endl;
-		name = student.name;
-		age = student.age;
-		mark = student.mark;
-		alive = student.alive;
-	}
-
-	~Student() {
-		cout << "destructor..." << endl;
-	}
-
-	string toString() {
-		string s = "name: " + name + ", age: " + to_string(age) +
-			", mark: " + to_string(mark) + ", alive: " +
-			(alive ? "yes" : "no") + "\n";
-		return s;
-	}
 };
+

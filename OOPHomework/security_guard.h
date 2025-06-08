@@ -1,23 +1,11 @@
-#pragma once
 #include "prisoners.h"
 
-class Teacher {
-	const int BEST_MARK = 9;
-
-
+class Guard : public People {
+    string rank;
+    string name;
 public:
-
-	Student getAllBestStudent(Student* students, int size) {
-
-		for (int i = 0; i < size; i++)
-		{
-			if (students[i].mark >= BEST_MARK) {
-				return students[i];
-			}
-		}
-		Student empty;
-
-		return empty;
-	}
-
+    Guard(const string& name, const string& rank) : People(name), rank(rank) {}
+    void showInfo() const override {
+        cout << "Security: " << name << ", rank: " << rank <<  endl;
+    }
 };

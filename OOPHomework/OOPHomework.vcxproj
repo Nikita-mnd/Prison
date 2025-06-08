@@ -127,10 +127,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Director.cpp" />
+    <ClCompile Include="initialization.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="People.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Director.h" />
+    <ClInclude Include="initialization.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="People.h" />
     <ClInclude Include="prisoners.h" />
     <ClInclude Include="security_guard.h" />
   </ItemGroup>
