@@ -1,10 +1,9 @@
 #include "prisoners.h"
 
 int main() {
-    Prisoner.p;
-	string test =  Prisoner::showInfo();
-
-
+    Prisoner p;
+	string s = p.showInfo();
+	cout << s;
 
 	return 0;
 }
